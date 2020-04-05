@@ -1,0 +1,43 @@
+{
+	"name": "petgram",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"build": "webpack",
+		"lint": "standard",
+		"start": "webpack-dev-server --host 0.0.0.0",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/malejandro13/advanced-react-petgram-project.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/malejandro13/advanced-react-petgram-project/issues"
+	},
+	"homepage": "https://github.com/malejandro13/advanced-react-petgram-project#readme",
+	"devDependencies": {
+		"@babel/core": "^7.9.0",
+		"@babel/preset-env": "^7.9.0",
+		"@babel/preset-react": "^7.9.4",
+		"babel-loader": "^8.1.0",
+		"html-webpack-plugin": "^4.0.4",
+		"webpack": "^4.42.1",
+		"webpack-cli": "^3.3.11",
+		"webpack-dev-server": "^3.10.3"
+	},
+	"dependencies": {
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1"
+	},
+	"standard": {
+		"ignore": [ "/api/**" ]
+	},
+	"eslintConfig": {
+		"extends": [ "./node_modules/standard/eslintrc.json" ]
+	}
+}
