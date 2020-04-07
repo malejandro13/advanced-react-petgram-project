@@ -1,7 +1,7 @@
 {
   "version": 2,
   "name": "advanced-react-petgram-project",
-  "alias": ["petgram-api"],
+  "alias": ["petgram-api-malejandro13"],
   "builds": [{ "src": "index.js", "use": "@now/node" }],
   "routes": [{
     "headers": {
