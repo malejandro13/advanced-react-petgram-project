@@ -1,8 +1,9 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { useStateValue } from '../Context';
 import { SubmitButton } from '../components/SubmitButton'
+import { Layout } from '../components/Layout'
 
-export const UserPage = () => {
+export default () => {
   const [{ user }, dispatch] = useStateValue();
 
   const handleLogout = (e) => {
@@ -14,9 +15,9 @@ export const UserPage = () => {
   }
 
   return (
-    <Fragment>
+    <Layout title={`User`}>
       <h1>User</h1>
       <SubmitButton onClick={handleLogout} >Logout</SubmitButton>
-    </Fragment>
+    </Layout>
   ) 
 }

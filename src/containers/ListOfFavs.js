@@ -3,8 +3,7 @@ import { useQuery } from '@apollo/react-hooks'
 import { FAVS_QUERY } from '../graphql/queries/FavQuery'
 import { ListOfPhotoCardsComponent } from '../components/ListOfPhotoCards'
 import { SkeletonPhotoCard } from '../components/SkeletonPhotoCard'
-import { PandaMessagePage } from '../pages/PandaMessage'
-
+import { PandaMessage } from '../components/PandaMessage'
 
 export const ListOfFavs = () => {
 	const { data, loading, error } = useQuery(FAVS_QUERY, {
@@ -18,7 +17,7 @@ export const ListOfFavs = () => {
 			{
 			data && data.favs.length !== 0
 			? <ListOfPhotoCardsComponent photos={data.favs} /> 
-			: <PandaMessagePage title={`you don't have favorites`} />
+			: <PandaMessage title={`you don't have favorites 😲`} />
 			}
 		</Fragment>
 	)

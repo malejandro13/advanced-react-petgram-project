@@ -1,19 +1,21 @@
-import React, { Fragment } from 'react'
+import React, { Suspense, lazy } from 'react'
 import { Router, Redirect } from '@reach/router'
 import { GlobalStyle } from './styles/GlobalStyles'
 import { useStateValue } from './Context'
-import { HomePage } from './pages/Home'
-import { DetailPage } from './pages/Detail'
-import { UserPage } from './pages/User'
-import { FavsPage } from './pages/Favs'
-import { NotRegisteredUserPage } from './pages/NotRegistered'
-import { PandaMessagePage } from './pages/PandaMessage'
+import Loader from './pages/Loader'
+
+const HomePage = lazy(() => import('./pages/Home'))
+const FavsPage = lazy(() => import('./pages/Favs'))
+const DetailPage = lazy(() => import('./pages/Detail'))
+const UserPage = lazy(() => import('./pages/User'))
+const NotRegisteredUserPage = lazy(() => import('./pages/NotRegisteredUser'))
+const NotFoundPage = lazy(() => import('./pages/NotFound'))
 
 export const App = () => {
   const [ { user }, dispach ] = useStateValue();
 
   return (
-    <Fragment>
+    <Suspense fallback={<Loader />}>
       <GlobalStyle />
       <Router>
         <HomePage path='/' />
@@ -23,10 +25,11 @@ export const App = () => {
         {!user.isAuth && <Redirect noThrow from='/favs' to='/login' />}
         {!user.isAuth && <Redirect noThrow from='/user' to='/login' />}
         {user.isAuth && <Redirect noThrow from='/login' to='/' />}
+        
         <FavsPage path='/favs' />
         <UserPage path='/user' />
-        <PandaMessagePage default title='Page not found 🙁' />
+        <NotFoundPage default title='Page not found 🙁' />
       </Router>
-    </Fragment>
+    </Suspense>
   )
 }

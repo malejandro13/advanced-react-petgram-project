@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { PandaSvg as PandaSvgNotFavs } from '../../components/PandaSvg'
+import { PandaSvg as PandaSvgNotFavs } from '../PandaSvg'
 
 export const PandaMessageWrapper = styled.div`
   display: flex;

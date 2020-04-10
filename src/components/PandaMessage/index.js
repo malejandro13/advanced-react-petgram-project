@@ -1,7 +1,7 @@
 import React from 'react'
 import { PandaSvg, PandaMessageWrapper, Title } from './styles'
 
-export const PandaMessagePage = ({ title }) => (
+export const PandaMessage = ({ title }) => (
   <PandaMessageWrapper>
     <PandaSvg /> 
     <Title>{ title }</Title>

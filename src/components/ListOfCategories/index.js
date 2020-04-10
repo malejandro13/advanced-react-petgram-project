@@ -5,7 +5,7 @@ import { useFetchData } from '../../hooks/useFetchData'
 import { SkeletonCategories } from '../SkeletonCategories'
 
 
-export const ListOfCategories = () => {
+const ListOfCategoriesComponent = () => {
   const [ showFixed, setShowFixed ] = useState(false)
   const { data, loading } = useFetchData('https://advanced-react-petgram-project.malejandro13.now.sh/categories')
 
@@ -40,3 +40,5 @@ export const ListOfCategories = () => {
     </Fragment>
   )
 }
+
+export const ListOfCategories = React.memo(ListOfCategoriesComponent)
