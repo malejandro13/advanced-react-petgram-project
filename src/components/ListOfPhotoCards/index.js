@@ -1,13 +1,14 @@
 import React from 'react'
 import { PhotoCard } from '../PhotoCard'
+import { Item } from './styles'
 
 export const ListOfPhotoCardsComponent = ({ photos = [] }) => (
 	<ul>
 		{
 		photos.map((photo) => (
-			<li key={photo.id}>
+			<Item key={photo.id}>
 				<PhotoCard {...photo}  />
-			</li>
+			</Item>
 		))}
 	</ul>
 )

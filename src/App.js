@@ -2,8 +2,6 @@ import React, { Fragment } from 'react'
 import { Router, Redirect } from '@reach/router'
 import { GlobalStyle } from './styles/GlobalStyles'
 import { useStateValue } from './Context'
-import { Logo } from './components/Logo'
-import { NavBar } from './components/NavBar'
 import { HomePage } from './pages/Home'
 import { DetailPage } from './pages/Detail'
 import { UserPage } from './pages/User'
@@ -17,7 +15,6 @@ export const App = () => {
   return (
     <Fragment>
       <GlobalStyle />
-      <Logo />
       <Router>
         <HomePage path='/' />
         <HomePage path='/pet/:categoryId' />
@@ -30,7 +27,6 @@ export const App = () => {
         <UserPage path='/user' />
         <PandaMessagePage default title='Page not found 🙁' />
       </Router>
-      <NavBar />
     </Fragment>
   )
 }
