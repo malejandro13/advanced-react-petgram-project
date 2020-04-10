@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { PandaSvg as PandaSvgNotFavs } from '../../components/PandaSvg'
 
-export const EmptyResultWrapper = styled.div`
+export const PandaMessageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
