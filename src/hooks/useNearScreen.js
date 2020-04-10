@@ -17,8 +17,7 @@ export function useNearScreen () {
           observer.disconnect()
         }
       })
-
-      observer.observe(element.current)
+      element.current && observer.observe(element.current)
     })
   }, [element])
 
