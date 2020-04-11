@@ -6,11 +6,12 @@
 	"scripts": {
 		"now-build": "npm run build",
 		"lint": "standard",
-		"build": "webpack --mode development",
-		"start:test": "npx serve dist -s",
-		"serve:test": "npm run build && npm run start:dev",
+		"build": "webpack",
+		"build:dev": "webpack --mode development",
+		"start:dev": "npx serve dist -s",
+		"serve:dev": "npm run build:dev && npm run start:dev",
 		"start": "webpack-dev-server --host 0.0.0.0",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "cypress open"
 	},
 	"repository": {
 		"type": "git",
@@ -29,10 +30,13 @@
 		"@babel/preset-env": "^7.9.0",
 		"@babel/preset-react": "^7.9.4",
 		"babel-loader": "^8.1.0",
+		"cypress": "^4.3.0",
 		"html-webpack-plugin": "^4.0.4",
 		"webpack": "^4.42.1",
 		"webpack-cli": "^3.3.11",
-		"webpack-dev-server": "^3.10.3"
+		"webpack-dev-server": "^3.10.3",
+		"webpack-pwa-manifest": "^4.2.0",
+		"workbox-webpack-plugin": "^5.1.2"
 	},
 	"dependencies": {
 		"@apollo/react-hooks": "^3.1.4",

@@ -17,8 +17,11 @@ export const PHOTO_BY_ID_QUERY = gql`
   query photo($id: ID!) {
     photo(id: $id) {
       id
-      likes
+      categoryId
       src
+      likes
+      userId
+      liked
     }
   }
 `

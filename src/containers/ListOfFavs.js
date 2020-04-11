@@ -17,7 +17,7 @@ export const ListOfFavs = () => {
 			{
 			data && data.favs.length !== 0
 			? <ListOfPhotoCardsComponent photos={data.favs} /> 
-			: <PandaMessage title={`you don't have favorites 😲`} />
+			: <PandaMessage title={`you don't have favorites 🤔`} />
 			}
 		</Fragment>
 	)

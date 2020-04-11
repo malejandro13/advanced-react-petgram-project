@@ -6,12 +6,13 @@ import { useMutation } from '@apollo/react-hooks'
 import { LIKE_PHOTO_MUTATION } from '../../graphql/mutations/PhotoMutation'
 import { Link } from '@reach/router'
 import PropTypes from 'prop-types'
+import { Redirect } from '@reach/router'
 
 const DEFAULT_IMAGE = 'https://res.cloudinary.com/midudev/image/upload/w_300/q_80/v1560262103/dogs.png'
 
 export const PhotoCard = ({ id, liked, likes = 0, src = DEFAULT_IMAGE }) => {
   const [show, element] = useNearScreen()
-  const [ setLikePhoto, { data } ] = useMutation(LIKE_PHOTO_MUTATION)
+  const [ setLikePhoto, { data, error } ] = useMutation(LIKE_PHOTO_MUTATION)
   
   const handleFavClick = () => {
     const input = { id: id }
@@ -19,6 +20,8 @@ export const PhotoCard = ({ id, liked, likes = 0, src = DEFAULT_IMAGE }) => {
 			variables: { input }
     })
   }
+
+  if(error) return <Redirect noThrow to='/login' />
   
   return (
     <Article ref={element}>

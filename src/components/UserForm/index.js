@@ -24,7 +24,7 @@ export const UserForm = ({ title, questionMessage, linkMessage,  onSubmit, handl
         </FormGroup>
 
         <FormGroup>
-          <Input id={`password-${title}`} placeholder='Password' type='password' autocomplete='off' { ...password } disabled={disabled} />
+          <Input id={`password-${title}`} placeholder='Password' type='password' autocomplete='new-password' { ...password } disabled={disabled} />
           <Label htmlFor={`password-${title}`}>Password</Label>
         </FormGroup>
 
